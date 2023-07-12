@@ -12,7 +12,7 @@ e-commerce in Django Framework
 
 - linux
 
-    virtualenv -p python3 venv
+      virtualenv -p python3 venv
 
 - Windows
 
