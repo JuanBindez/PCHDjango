@@ -1,4 +1,6 @@
-# E-commerce-Backend-Django
+# E-commerce-Backend-Django   0.1.dev
+
+
 e-commerce in Django Framework
 
 
