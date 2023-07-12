@@ -37,5 +37,10 @@ e-commerce in Django Framework
 ### superuser:
 
     python3 manage.py createsuperuser
+----------
+
+### run server:
+
+    python3 manage.py runserver
 
 
