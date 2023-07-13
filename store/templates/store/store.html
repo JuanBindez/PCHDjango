@@ -19,7 +19,8 @@
       <div class="col-lg-4">
          <img class="thumbnail" src="{{produto.imageURL}}">
          <div class="box-element product">
-            <h6><strong>{{produto.nome}}</strong></h6>
+            <h4><strong>{{produto.nome}}</strong></h6>
+            <h6>{{produto.detalhes}}</h6>
             <hr>
             {%if autenticado%}
             <button class="btn btn-outline-secondary add-btn" onclick="addItem({{produto.id}});">Adicionar</button>
