@@ -21,6 +21,7 @@
 
 from django.urls import path
 from . import views
+from .views import register
 
 urlpatterns = [
     # Leave as empty string for base url
@@ -29,6 +30,7 @@ urlpatterns = [
     path('carrinho/', views.carrinho, name='carrinho'),
     path('checkout/', views.checkout, name='checkout'),
     path('entrar/', views.entrar, name='entrar'),
+    path('cadastrar/', register, name='registro'),
     path('login/', views.login, name='login'),
     path('add-item/', views.add_item, name='add_item'),
     path('upd-item/', views.upd_item, name='upd_item'),

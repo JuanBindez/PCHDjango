@@ -48,6 +48,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+MIDDLEWARE = [
+    # ...outros middlewares...
+    'django.middleware.csrf.CsrfViewMiddleware',
+    # ...outros middlewares...
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -23,20 +23,57 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Cliente(models.Model):
+
+
+
+
+
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
+class ClienteManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('O endereço de e-mail é obrigatório')
+
+        email = self.normalize_email(email)
+        cliente = self.model(email=email, **extra_fields)
+        cliente.set_password(password)
+        cliente.save(using=self._db)
+        return cliente
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        return self.create_user(email, password, **extra_fields)
+
+class Cliente(AbstractBaseUser):
     ENUM_GENERO = [
         ('M', 'Masculino'),
         ('F', 'Feminino')
     ]
     nome = models.CharField(max_length=200)
-    senha = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
+    email = models.CharField(max_length=200, unique=True)
     genero = models.CharField(choices=ENUM_GENERO, max_length=1, default='M')
     endereco = models.CharField(max_length=200, null=True, blank=True)
     referencia = models.CharField(max_length=200, null=True, blank=True)
     cidade = models.CharField(max_length=200, default='Brasília')
     telefone = models.CharField(max_length=200, null=True, blank=True)
     autenticado = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['nome']
+
+    objects = ClienteManager()
+
+    def get_full_name(self):
+        return self.nome
+
+    def get_short_name(self):
+        return self.nome
 
     def __str__(self):
         return self.nome + " (" + str(self.id) + ")"
@@ -46,6 +83,19 @@ class Cliente(models.Model):
         if self.genero == 'M':
             return 'o'
         return 'a'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class Produto(models.Model):
@@ -73,6 +123,12 @@ class Produto(models.Model):
         return url
 
 
+
+
+
+
+
+
 class Ordem(models.Model):
     cliente = models.ForeignKey(
         Cliente, on_delete=models.SET_NULL, null=True, blank=True)
@@ -96,6 +152,12 @@ class Ordem(models.Model):
         return total
 
 
+
+
+
+
+
+
 class OrdemItem(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.SET_NULL, null=True)
     ordem = models.ForeignKey(Ordem, on_delete=models.SET_NULL, null=True)
@@ -106,6 +168,11 @@ class OrdemItem(models.Model):
     def get_total(self):
         total = self.produto.preco * self.quantidade
         return total
+
+
+
+
+
 
 
 class EnderecoEntrega(models.Model):

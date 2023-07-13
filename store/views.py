@@ -25,6 +25,26 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth import logout
 
+
+
+from django.shortcuts import render, redirect
+from .forms import RegistrationForm
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/sucesso/')  # Redirecionar para a página de sucesso após o registro
+    else:
+        form = RegistrationForm()
+    return render(request, 'store/cadastro.html', {'form': form})
+
+
+
+
+
+
 # Componentes da Loja
 cliente = Cliente
 ordem = {'get_car_total': 0, 'get_car_itens': 0, 'shipping': False}
@@ -32,11 +52,8 @@ carItens = ordem['get_car_itens']
 
 
 
-from django.contrib.auth import logout
-
 def home(request):
     return render(request, 'store/main.html')
-
 
 
 def store(request):
