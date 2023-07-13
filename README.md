@@ -1,4 +1,4 @@
-# CommerceCore   0.3.dev
+# CommerceCore   0.4.dev
 
 
 e-commerce in Django Framework
