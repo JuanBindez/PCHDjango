@@ -25,6 +25,7 @@
             <div class="cart-row">
                <div style="flex:2"></div>
                <div style="flex:2"><strong>Item</strong></div>
+               <div style="flex:2"><strong>Descrição</strong></div>
                <div style="flex:1"><strong>Preço</strong></div>
                <div style="flex:1"><strong>Quantidade</strong></div>
                <div style="flex:1"><strong>Total</strong></div>
@@ -33,7 +34,10 @@
             <div class="cart-row">
                <div style="flex:2"><img class="row-image" src="{{item.produto.imageURL}}"></div>
                <div style="flex:2"><p>{{item.produto.nome}}</p></div>
+               <div style="flex:2"><p>{{item.produto.detalhes}}</p></div>
                <div style="flex:1"><p>{{item.produto.preco | currency}}</p></div>
+            
+
                <div style="flex:1">
                   <p class="quantity">{{item.quantidade}}</p>
                   <div class="quantity">
