@@ -1,4 +1,4 @@
-# E-commerce-Backend-Django   0.1.dev
+# CommerceCore   0.2.dev
 
 
 e-commerce in Django Framework
@@ -6,7 +6,7 @@ e-commerce in Django Framework
 
 ### make clone:
 
-    git clone https://github.com/JuanBindez/E-commerce-Backend/
+    git clone https://github.com/JuanBindez/CommerceCore/
 
 ----------
 
