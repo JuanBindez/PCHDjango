@@ -2,9 +2,10 @@
 {% load static %}
 {% load my_filters %}
 {% block content %}
+
+    <h2>Você Foi Cadastrado Com Sucesso!</h2>
     <h3>Proceda a Entrada em CommerceCore</h3>
-    Para solicitar seu cadastro envie um e-mail para ... com seu nome completo, telefone de contato, endereço para entrega e cidade.
-    <b>Importante</b>: Possuímos pontos que atendemos certifique-se que o endereço corresponde a um deles.
+   
     <br /><br />
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
@@ -21,6 +22,5 @@
             <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
-        <a href="http://127.0.0.1:8000/cadastrar/" class="btn btn-warning">Cadastro</a>
     </form>
 {% endblock content %}

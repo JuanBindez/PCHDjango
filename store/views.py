@@ -17,18 +17,23 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+import json
 
 from django.shortcuts import render
 from django.http import JsonResponse
-import json
-from .models import *
 from django.contrib import messages
 from django.contrib.auth import logout
-
-
-
+from django.contrib.auth.hashers import check_password
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
+from .models import Cliente
+from .models import *
+
+
+
+cliente = Cliente
+ordem = {'get_car_total': 0, 'get_car_itens': 0, 'shipping': False}
+carItens = ordem['get_car_itens']
 
 def register(request):
     if request.method == 'POST':
@@ -39,17 +44,6 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, 'store/cadastro.html', {'form': form})
-
-
-
-
-
-
-# Componentes da Loja
-cliente = Cliente
-ordem = {'get_car_total': 0, 'get_car_itens': 0, 'shipping': False}
-carItens = ordem['get_car_itens']
-
 
 
 def home(request):
@@ -78,10 +72,10 @@ def store(request):
 
 
 def add_item(request):
-    # Dados do Formulário
+
     data = json.loads(request.body)
     produtoId = data['produtoId']
-    # Dados Locais
+
     produto = Produto.objects.get(id=produtoId)
     clienteId = request.session['cliente']
     cliente = Cliente.objects.get(id=clienteId)
@@ -104,18 +98,18 @@ def add_item(request):
 
 
 def upd_item(request):
-    # Dados do Formulário
+
     data = json.loads(request.body)
     produtoId = data['produtoId']
     acao = data['acao']
-    # Dados Locais
+
     clienteId = request.session['cliente']
     cliente = Cliente.objects.get(id=clienteId)
     produto = Produto.objects.get(id=produtoId)
     ordem = Ordem.objects.get(cliente=cliente, completo=False)
-    # Localiza o Item
+
     itens = OrdemItem.objects.filter(ordem=ordem, produto=produto)
-    # Dispara a ação
+
     for ordemItem in itens:
         if acao == 'add':
             ordemItem.quantidade = (ordemItem.quantidade + 1)
@@ -135,27 +129,27 @@ def carrinho(request):
     carItens = ordem.get_car_itens
     if carItens != 0:
         itens = ordem.ordemitem_set.all()
-        # Monta o Contexto e chama a tela
+
         context = {'carItens': carItens, 'ordem': ordem, 'itens': itens,
                    'autenticado': True, 'cliente': cliente}
         return render(request, 'store/cart.html', context)
     else:
         messages.error(request, 'Não existem pedidos a finalizar!')
         produtos = Produto.objects.all()
-        # Monta o Contexto e chama a tela
+
         context = {'produtos': produtos,
                    'carItens': carItens, 'autenticado': True, 'cliente': cliente}
         return render(request, 'store/store.html', context)
 
 
 def checkout(request):
-    # Localiza os Dados
+
     clienteId = request.session['cliente']
     cliente = Cliente.objects.get(id=clienteId)
     ordem = Ordem.objects.get(cliente=cliente, completo=False)
     itens = ordem.ordemitem_set.all()
     carItens = ordem.get_car_itens
-    # Monta o Contexto e chama a tela
+
     context = {'itens': itens, 'ordem': ordem,
                'carItens': carItens, 'cliente': cliente}
     return render(request, 'store/checkout.html', context)
@@ -163,6 +157,9 @@ def checkout(request):
 
 def entrar(request):
     return render(request, 'store/login.html')
+
+def user_cadastrado(request):
+    return render(request, 'store/sucesso.html')
 
 
 def login(request):
@@ -172,7 +169,7 @@ def login(request):
     except:
         existe = False
 
-    if existe and cliente.senha == request.POST['senha']:
+    if existe and cliente.check_password(request.POST['senha']):
         request.session['cliente'] = cliente.id
         clienteId = request.session['cliente']
         ordem, created = Ordem.objects.get_or_create(

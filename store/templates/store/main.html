@@ -50,6 +50,7 @@
         <div class="form-inline my-2 my-lg-0">
           {% if autenticado %}
           <a href="{% url 'sair' %}" class="btn btn-warning">Sair</a>
+          <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
           <a href="{% url 'carrinho' %}"><img  id="cart-icon" src="{% static 'images/cart.png' %}"></a>
           <p id="cart-total">{{ carItens }}</p>
           {% else %}
@@ -69,7 +70,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         Copyright © 2023 Juan Bindez    : 
-        <a class="text-white" href="https://github.com/juanbindez">CommerceCore v0.3.dev</a>
+        <a class="text-white" href="https://github.com/juanbindez">CommerceCore v0.6.dev</a>
       </div>
       <!-- Copyright -->
     </footer>

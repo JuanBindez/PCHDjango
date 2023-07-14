@@ -1,11 +1,14 @@
+{% extends 'store/main.html' %}
 {% load static %}
 {% load my_filters %}
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Cadastrar</button>
+<form method="post" class="my-form">
+    <div class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Cadastrar</button>
+    </div>
 </form>
 
 {% endblock content %}

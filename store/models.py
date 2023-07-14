@@ -21,18 +21,9 @@
 
 from django.db import models
 from django.contrib.auth.models import User
-
-
-
-
-
-
-
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class ClienteManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -49,6 +40,7 @@ class ClienteManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(email, password, **extra_fields)
+
 
 class Cliente(AbstractBaseUser):
     ENUM_GENERO = [
