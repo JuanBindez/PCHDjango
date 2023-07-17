@@ -1,7 +1,7 @@
 # CommerceCore   1.0-rc1
 
 
-e-commerce in Django Framework
+## e-commerce in Django 4.2.3
 
 ![Captura de tela de 2023-07-16 23-20-12](https://github.com/JuanBindez/CommerceCore/assets/79322362/460862f7-0c90-4a71-a2ba-9fc522e6f6a8)
 
