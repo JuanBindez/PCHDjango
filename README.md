@@ -1,4 +1,4 @@
-# CommerceCore   0.6.dev
+# CommerceCore   1.0-rc1
 
 
 e-commerce in Django Framework
