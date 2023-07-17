@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 {% load cart %}
 {% load custom_filter %}
 <!-- body -->
@@ -32,6 +31,9 @@
 					<div class="card-body">
 						<p class="card-title">{{product.name}}</p>
 						<p class="card-text"><b>{{product.price|currency}}</b></p>
+
+						<p class="card-text"><b>{{product.stock_quantity}}</b> available</p>
+
 						<!-- {{product | is_in_cart:request.session.cart }} -->
 					</div>
 
@@ -45,7 +47,10 @@
 								<input hidden type="text" name='remove' value='True'>
 								<input type="submit" value=" - " class="btn btn-block btn-success border-right">
 							</form>
-							<div class="text-center col btn btn-success">{{product|cart_quantity:request.session.cart}} in Cart</div>
+
+								<div class="text-center col btn btn-success">{{ product|cart_quantity:request.session.cart }} no Carrinho</div>
+
+								
 							<form action="/#{{product.id}}" class="col-2 " method="post">
 								{% csrf_token %}
 								<input hidden type="text" name='product' value='{{product.id}}'>
