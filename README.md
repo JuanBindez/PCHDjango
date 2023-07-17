@@ -1,4 +1,4 @@
-# CommerceCore   1.0-rc2
+# CommerceCore   1.0-rc3
 
 
 ## e-commerce in Django 4.2.3
