@@ -13,7 +13,12 @@
 ![Captura de tela de 2023-07-16 23-21-40](https://github.com/JuanBindez/CommerceCore/assets/79322362/7e59ba3f-ee7d-4940-8dc9-a0bdd50575fd)
 
 
+![Captura de tela de 2023-07-22 22-34-18](https://github.com/JuanBindez/CommerceCore/assets/79322362/5534890e-6a30-44b3-a44a-4694cc2ff1c1)
 
+![Captura de tela de 2023-07-22 22-34-29](https://github.com/JuanBindez/CommerceCore/assets/79322362/1ec259e4-f275-4ed6-9937-089269b78889)
+
+
+![Captura de tela de 2023-07-22 22-34-41](https://github.com/JuanBindez/CommerceCore/assets/79322362/8986ac44-8224-4c69-ad15-dcc1d653fbcb)
 
 
 
