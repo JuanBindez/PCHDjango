@@ -2,7 +2,7 @@
 # ChangeLog CommerceCore
 
 
-### V1.0.0:
+### v1.0.0:
 
 - Robust Django Architecture: CommerceCore was built using the famous Django framework, known for its efficiency, security and ease of maintenance. This ensures that the software is reliable and scalable to meet different traffic demands.
 
