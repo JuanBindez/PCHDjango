@@ -1,6 +1,6 @@
 <h1 align="">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="CommerceCore_ico.png" width="150px"/> 
-   <h1 align="">PyCommerce 1.0.0</h1>
+   <h1 align="">PyCommerceHub 1.0.0</h1>
 </h1>
 
 
