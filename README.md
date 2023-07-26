@@ -4,8 +4,6 @@
 </h1>
 
 
-
-
 ----------
 
 ## e-commerce in Django Framework 4.2.3
