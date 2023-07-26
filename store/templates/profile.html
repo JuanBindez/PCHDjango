@@ -1,0 +1,20 @@
+<!-- customer_edit.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Customer Information</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" value="{{ customer.first_name }}" required><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" value="{{ customer.last_name }}" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" name="phone" value="{{ customer.phone }}" required><br>
+
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

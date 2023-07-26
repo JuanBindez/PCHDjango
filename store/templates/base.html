@@ -65,21 +65,24 @@
         </li>
 
         {% if request.session.customer %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/profile">Profile<span class="sr-only">(current)</span></a>
+          </li>
+          
+          <li class="nav-item active ">
+            <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+          </li>
+          {% else %}
         
-        <li class="nav-item active ">
-          <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active ">
-          <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
-        </li>
-        {% else %}
-       
-        <li class="nav-item active">
-          <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
-        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+          </li>
         {% endif %}
 
 
@@ -108,7 +111,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         Copyright © 2023 Juan Bindez    : 
-        <a class="text-white" href="https://github.com/juanbindez">PyCommerceHub v1.1-rc1</a>
+        <a class="text-white" href="https://github.com/juanbindez">PyCommerceHub v1.1-rc2</a>
       </div>
       <!-- Copyright -->
     </footer>
