@@ -1,4 +1,4 @@
-# this is part of the PyCommerceHub project.
+# this is part of the CommerceCore project.
 #
 #
 # Copyright ©  2023  Juan Bindez  <juanbindez780@gmail.com>
@@ -37,6 +37,9 @@ class Order(models.Model):
     phone = models.CharField (max_length=50, default='', blank=True)
     date = models.DateField (default=datetime.datetime.today)
     status = models.BooleanField (default=False)
+
+    def __str__(self):
+        return str(self.customer)
 
     def placeOrder(self):
         self.save()

@@ -34,10 +34,12 @@ class Products(models.Model):
 
     def __str__(self):
         return "Product "+self.name
+    
 
     @staticmethod
     def get_products_by_id(ids):
         return Products.objects.filter (id__in=ids)
+    
     @staticmethod
     def get_all_products():
         return Products.objects.all()
