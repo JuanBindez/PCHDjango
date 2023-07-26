@@ -1,4 +1,4 @@
-# this is part of the CommerceCore project.
+# this is part of the PyCommerceHub project.
 #
 #
 # Copyright ©  2023  Juan Bindez  <juanbindez780@gmail.com>

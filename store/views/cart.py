@@ -21,17 +21,33 @@
 
 
 
-from django.shortcuts import render , redirect
-
-from django.contrib.auth.hashers import  check_password
+from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import check_password
 from store.models.customer import Customer
-from django.views import  View
+from django.views import View
 from store.models.product import Products
+from django.contrib import messages
 
 class Cart(View):
-    def get(self , request):
-        ids = list(request.session.get('cart').keys())
+    def get(self, request):
+        ids = list(request.session.get('cart', {}).keys())
         products = Products.get_products_by_id(ids)
-        print(products)
-        return render(request , 'cart.html' , {'products' : products} )
+        return render(request, 'cart.html', {'products': products})
+
+    def post(self, request):
+        products_to_delete = request.POST.getlist('delete_item')
+        cart = request.session.get('cart', {})
+
+        for product_id in products_to_delete:
+            try:
+                product = Products.objects.get(id=product_id)
+                if str(product_id) in cart:
+                    cart.pop(str(product_id))
+            except Products.DoesNotExist:
+                messages.error(request, f"O produto com ID {product_id} não foi encontrado.")
+
+        request.session['cart'] = cart
+        messages.success(request, "Os itens selecionados foram removidos do carrinho com sucesso.")
+
+        return redirect('cart')  # Redireciona de volta para a página do carrinho após a exclusão
 
