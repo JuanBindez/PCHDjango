@@ -1,5 +1,5 @@
 <h1 align="">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="PCHDjango.png" width="150px"/> 
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="PCH.png" width="150px"/> 
    <h1 align="">PCHDjango 1.1-rc3</h1>
 </h1>
 
