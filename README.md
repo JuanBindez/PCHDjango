@@ -1,6 +1,6 @@
 <h1 align="">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="PyCommerceHub.png" width="150px"/> 
-   <h1 align="">PyCommerceHub 1.1-rc2</h1>
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="PCHDjango.png" width="150px"/> 
+   <h1 align="">PCHDjango 1.1-rc3</h1>
 </h1>
 
 
@@ -8,7 +8,7 @@
 
 ## e-commerce in Django Framework 4.2.3
 
-### Introducing "PyCommerceHub", an e-commerce software built on the powerful Django Framework. PyCommerceHub is a solid foundation for developers who want to build their own online stores, offering a complete shopping experience for customers. In the first version, the software comes equipped with essential functionalities, such as a login screen for customers, an intuitive system for adding products to the cart and placing orders.
+### Introducing "PCHDjango", an e-commerce software built on the powerful Django Framework. PCHDjango is a solid foundation for developers who want to build their own online stores, offering a complete shopping experience for customers. In the first version, the software comes equipped with essential functionalities, such as a login screen for customers, an intuitive system for adding products to the cart and placing orders.
 
 
 
@@ -29,7 +29,7 @@
 
 ### make clone:
 
-    git clone https://github.com/JuanBindez/PyCommerceHub/
+    git clone https://github.com/JuanBindez/PCHDjango/
 
 ----------
 

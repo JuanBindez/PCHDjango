@@ -1,4 +1,4 @@
-# this is part of the PyCommerceHub C project.
+# this is part of the PCHDjango project.
 #
 #
 # Copyright ©  2023  Juan Bindez  <juanbindez780@gmail.com>
@@ -39,6 +39,3 @@ admin.site.register(Products,AdminProduct)
 admin.site.register(Category)
 admin.site.register(Customer)
 admin.site.register(Order)
-
-
-# username = Tanushree, email = tanushree7252@gmail.com, password = 1234
