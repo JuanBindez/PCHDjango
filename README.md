@@ -11,19 +11,15 @@
 ### Introducing "PCHDjango", an e-commerce software built on the powerful Django Framework. PCHDjango is a solid foundation for developers who want to build their own online stores, offering a complete shopping experience for customers. In the first version, the software comes equipped with essential functionalities, such as a login screen for customers, an intuitive system for adding products to the cart and placing orders.
 
 
-
-![Captura de tela de 2023-07-16 23-21-11](https://github.com/JuanBindez/CommerceCore/assets/79322362/652343fb-2ca6-4bf3-853b-f2d5de3bef6d)
-
-
-![Captura de tela de 2023-07-16 23-21-40](https://github.com/JuanBindez/CommerceCore/assets/79322362/7e59ba3f-ee7d-4940-8dc9-a0bdd50575fd)
+![Captura de tela de 2023-07-27 10-34-23](https://github.com/JuanBindez/PyCommerceHub/assets/79322362/0ebcba7f-b91c-442f-95b4-68c7985e318e)
 
 
-![Captura de tela de 2023-07-22 22-34-18](https://github.com/JuanBindez/CommerceCore/assets/79322362/5534890e-6a30-44b3-a44a-4694cc2ff1c1)
-
-![Captura de tela de 2023-07-22 22-34-29](https://github.com/JuanBindez/CommerceCore/assets/79322362/1ec259e4-f275-4ed6-9937-089269b78889)
+![Captura de tela de 2023-07-27 10-34-34](https://github.com/JuanBindez/PyCommerceHub/assets/79322362/3f362c1e-22a9-46e5-806a-8eb168d6d164)
 
 
-![Captura de tela de 2023-07-22 22-34-41](https://github.com/JuanBindez/CommerceCore/assets/79322362/8986ac44-8224-4c69-ad15-dcc1d653fbcb)
+![Captura de tela de 2023-07-27 10-34-58](https://github.com/JuanBindez/PyCommerceHub/assets/79322362/d8ed7612-f65a-425d-8322-0c24b3e2046a)
+
+
 
 
 
