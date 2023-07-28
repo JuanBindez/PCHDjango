@@ -3,7 +3,6 @@
    <h1 align="">PCHDjango 1.1-rc3</h1>
 </h1>
 
-
 ----------
 
 ## e-commerce in Django Framework 4.2.3
