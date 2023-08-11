@@ -20,8 +20,6 @@
 
 
 
-
-
 ### make clone:
 
     git clone https://github.com/JuanBindez/PCHDjango/
