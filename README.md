@@ -19,7 +19,6 @@
 ![Captura de tela de 2023-07-27 10-34-58](https://github.com/JuanBindez/PyCommerceHub/assets/79322362/d8ed7612-f65a-425d-8322-0c24b3e2046a)
 
 
-
 ### make clone:
 
     git clone https://github.com/JuanBindez/PCHDjango/
