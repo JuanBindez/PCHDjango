@@ -5,6 +5,7 @@
 
 ----------
 
+
 ## e-commerce in Django Framework 4.2.3
 
 ### Introducing "PCHDjango", an e-commerce software built on the powerful Django Framework. PCHDjango is a solid foundation for developers who want to build their own online stores, offering a complete shopping experience for customers. In the first version, the software comes equipped with essential functionalities, such as a login screen for customers, an intuitive system for adding products to the cart and placing orders.
